@@ -14,10 +14,15 @@
             margin: 0;
             font-family: 'Inter', sans-serif; /* خط نظيف وعصري */
             background-color: #f7f7f7; /* خلفية رمادية فاتحة جداً / بيضاء مائلة للرمادي */
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; /* محاذاة المحتوى للأعلى */
+            
+            /* -- التعديلات لجعل الفوتر في الأسفل دائماً -- */
+            display: flex; /* تفعيل Flexbox على الجسم */
+            flex-direction: column; /* ترتيب العناصر عمودياً */
             min-height: 100vh; /* ارتفاع كامل لشاشة العرض */
+            justify-content: space-between; /* توزيع المساحة بين العناصر: المحتوى في الأعلى والفوتر في الأسفل */
+            /* -- نهاية التعديلات -- */
+
+            align-items: center; /* توسيط المحتوى أفقياً */
             padding: 20px; /* هامش حول المحتوى على الشاشات الكبيرة */
             box-sizing: border-box; /* يشمل الهوامش والحدود ضمن العرض والارتفاع */
             color: #333; /* لون نص رمادي داكن */
@@ -34,6 +39,13 @@
             box-shadow: none; /* لا يوجد ظل للحاوية */
             padding: 0; /* لا يوجد هامش داخلي في الحاوية نفسها */
             text-align: center; /* توسيط المحتوى النصي */
+            
+            /* -- التعديلات لجعل الفوتر في الأسفل دائماً -- */
+            flex-grow: 1; /* يسمح للحاوية بالنمو لملء المساحة المتاحة ودفع الفوتر للأسفل */
+            display: flex; /* تفعيل Flexbox داخل الـ bio-container */
+            flex-direction: column; /* ترتيب المحتوى داخله عمودياً */
+            justify-content: flex-start; /* يبدأ المحتوى من الأعلى */
+            /* -- نهاية التعديلات -- */
         }
 
         /* Profile Section */
@@ -129,21 +141,17 @@
             border-color: #6c5ce7; /* يتغير لون الحد إلى اللون المميز عند التحويم */
         }
 
-        .link-button i {
-            /* هذه الأنماط معلقة لاتباع نمط Linktree الذي لا يستخدم أيقونات داخل الأزرار بشكل افتراضي.
-               قم بإزالة التعليق إذا كنت ترغب في ظهور الأيقونات داخل الأزرار. */
-            /* margin-right: 10px; */ 
-            /* font-size: 0.9em; */
-            /* opacity: 1; */
-            /* color: inherit; */
-        }
-        
         /* Footer (Optional) */
         .footer {
-            margin-top: 40px; /* مسافة أسفل الأزرار */
+            margin-top: auto; /* هذا مهم جداً: يدفع الفوتر إلى الأسفل قدر الإمكان */
+            padding-top: 40px; /* مسافة أعلى الفوتر */
+            padding-bottom: 20px; /* مسافة أسفل الفوتر لتبدو متوازنة مع padding-top في body */
             font-size: 0.8em; /* حجم خط الفوتر */
             color: #aaa; /* لون رمادي فاتح جداً للفوتر */
             text-align: center; /* توسيط نص الفوتر */
+            width: 100%; /* الفوتر يأخذ عرض 100% */
+            max-width: 400px; /* نفس عرض bio-container ليكون متناسقاً */
+            box-sizing: border-box; /* لضمان أن الهامش لا يخرج عن العرض */
         }
 
         .footer a {
@@ -165,7 +173,7 @@
             }
             .bio-container {
                 width: 100%; /* العرض الكامل للشاشة */
-                min-height: 100vh; /* ارتفاع كامل لشاشة العرض */
+                min-height: auto; /* إزالة min-height: 100vh من هنا، لأن body هو من يتولى الارتفاع */
                 border-radius: 0; /* إزالة تقويس الحواف */
                 box-shadow: none; /* إزالة الظل */
                 padding: 0; /* لا يوجد هامش داخلي في الحاوية */
@@ -186,6 +194,10 @@
             .link-button {
                 font-size: 0.95em;
                 padding: 14px 20px;
+            }
+            .footer {
+                padding-bottom: 20px; /* ضمان وجود هامش أسفل الفوتر على الهاتف */
+                max-width: 100%; /* الفوتر يأخذ عرض 100% على الشاشات الصغيرة */
             }
         }
     </style>
@@ -222,10 +234,10 @@
             <a href="#contact" class="link-button">
                 احجز استشارة </a>
         </div>
+    </div>
 
-        <div class="footer">
-            مصمم بواسطة <a href="https://yourwebsite.com">اسمك</a> &copy; 2025
-        </div>
+    <div class="footer">
+        مصمم بواسطة <a href="https://yourwebsite.com">اسمك</a> &copy; 2025
     </div>
 </body>
 </html>
