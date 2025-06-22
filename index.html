@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>روابط [اسمك/اسم علامتك التجارية] - Link in Bio احترافي</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* General Body and Font Styles */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif; /* خط نظيف وعصري */
+            background-color: #f7f7f7; /* خلفية رمادية فاتحة جداً / بيضاء مائلة للرمادي */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* محاذاة المحتوى للأعلى */
+            min-height: 100vh; /* ارتفاع كامل لشاشة العرض */
+            padding: 20px; /* هامش حول المحتوى على الشاشات الكبيرة */
+            box-sizing: border-box; /* يشمل الهوامش والحدود ضمن العرض والارتفاع */
+            color: #333; /* لون نص رمادي داكن */
+            line-height: 1.6;
+            direction: ltr; /* اتجاه المحتوى من اليسار لليمين للحفاظ على التصميم */
+        }
+
+        /* Container for the Link in Bio page */
+        .bio-container {
+            width: 100%; /* يأخذ العرض الكامل المتاح ضمن الهامش */
+            max-width: 400px; /* أقصى عرض للبطاقة (أضيق قليلاً لمظهر Linktree) */
+            background-color: transparent; /* لا توجد خلفية للحاوية نفسها */
+            border-radius: 0; /* لا يوجد تقويس للحواف للحاوية */
+            box-shadow: none; /* لا يوجد ظل للحاوية */
+            padding: 0; /* لا يوجد هامش داخلي في الحاوية نفسها */
+            text-align: center; /* توسيط المحتوى النصي */
+        }
+
+        /* Profile Section */
+        .profile-section {
+            margin-bottom: 30px; /* مسافة أسفل قسم الملف الشخصي */
+            padding-top: 30px; /* مسافة من أعلى الشاشة */
+        }
+
+        .profile-picture-container {
+            width: 96px; /* عرض صورة الملف الشخصي */
+            height: 96px; /* ارتفاع صورة الملف الشخصي */
+            border-radius: 50%; /* لجعل الصورة دائرية */
+            overflow: hidden; /* لإخفاء أي جزء زائد من الصورة */
+            border: 2px solid #fff; /* حد أبيض رفيع حول الصورة */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ظل خفيف جداً للصورة */
+            margin: 0 auto 15px; /* توسيط الصورة وإضافة مسافة سفلية */
+        }
+
+        .profile-picture {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* لضمان ملء الصورة للحاوية مع الحفاظ على الأبعاد */
+            display: block; /* لإزالة أي مسافة إضافية أسفل الصورة */
+        }
+
+        .profile-section h1 {
+            font-family: 'Inter', sans-serif; /* استخدام خط Inter للعنوان */
+            font-weight: 700; /* وزن خط سميك للعنوان */
+            font-size: 1.5em; /* حجم خط العنوان */
+            margin: 10px 0 5px; /* هوامش حول العنوان */
+            color: #333; /* لون نص العنوان */
+            letter-spacing: 0; /* لا توجد مسافة بين الأحرف */
+        }
+        
+        .profile-section p.bio-description {
+            font-size: 0.9em; /* حجم خط الوصف */
+            color: #666; /* لون رمادي أفتح للوصف */
+            max-width: 300px; /* أقصى عرض للوصف */
+            margin: 0 auto 25px; /* توسيط الوصف وإضافة مسافة سفلية */
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex; /* لعرض الأيقونات جنبًا إلى جنب */
+            justify-content: center; /* توسيط الأيقونات أفقياً */
+            gap: 20px; /* المسافة بين الأيقونات */
+            margin-bottom: 40px; /* مسافة أسفل أيقونات التواصل الاجتماعي */
+        }
+
+        .social-icons a {
+            color: #999; /* لون رمادي باهت للأيقونات */
+            font-size: 1.4em; /* حجم الأيقونات */
+            transition: color 0.3s ease, transform 0.2s ease; /* تأثيرات الانتقال عند التحويم */
+        }
+
+        .social-icons a:hover {
+            color: #6c5ce7; /* لون مميز عند التحويم */
+            transform: scale(1.1); /* تأثير تكبير طفيف عند التحويم */
+        }
+
+        /* Links Section */
+        .links-section {
+            display: flex; /* لعرض الأزرار عمودياً */
+            flex-direction: column; /* ترتيب العناصر عمودياً */
+            gap: 16px; /* المسافة بين الأزرار */
+            padding: 0 20px; /* هامش داخلي للأزرار من الجانبين */
+        }
+
+        .link-button {
+            display: flex; /* لعرض المحتوى داخل الزر */
+            justify-content: center; /* توسيط المحتوى داخل الزر أفقياً */
+            align-items: center; /* توسيط المحتوى داخل الزر عمودياً */
+            background-color: #fff; /* خلفية بيضاء للأزرار */
+            color: #333; /* لون نص داكن للأزرار */
+            padding: 16px 25px; /* هامش داخلي للأزرار */
+            border-radius: 9999px; /* لجعل الأزرار مستديرة جداً (على شكل حبة دواء) */
+            text-decoration: none; /* إزالة التسطير من الروابط */
+            font-size: 1em; /* حجم خط الزر */
+            font-weight: 600; /* وزن خط شبه سميك */
+            text-align: center; /* توسيط النص داخل الزر */
+            border: 1px solid #eee; /* حد خفيف جداً للأزرار */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* ظل خفيف جداً للأزرار */
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.3s ease; /* تأثيرات الانتقال عند التحويم */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-button:hover {
+            background-color: #6c5ce7; /* لون مميز عند التحويم */
+            color: #ffffff; /* نص أبيض عند التحويم */
+            transform: translateY(-2px); /* تأثير رفع طفيف عند التحويم */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* ظل أكثر وضوحاً عند التحويم */
+            border-color: #6c5ce7; /* يتغير لون الحد إلى اللون المميز عند التحويم */
+        }
+
+        .link-button i {
+            /* هذه الأنماط معلقة لاتباع نمط Linktree الذي لا يستخدم أيقونات داخل الأزرار بشكل افتراضي.
+               قم بإزالة التعليق إذا كنت ترغب في ظهور الأيقونات داخل الأزرار. */
+            /* margin-right: 10px; */ 
+            /* font-size: 0.9em; */
+            /* opacity: 1; */
+            /* color: inherit; */
+        }
+        
+        /* Footer (Optional) */
+        .footer {
+            margin-top: 40px; /* مسافة أسفل الأزرار */
+            font-size: 0.8em; /* حجم خط الفوتر */
+            color: #aaa; /* لون رمادي فاتح جداً للفوتر */
+            text-align: center; /* توسيط نص الفوتر */
+        }
+
+        .footer a {
+            color: #999; /* لون باهت لروابط الفوتر */
+            text-decoration: none; /* إزالة التسطير من روابط الفوتر */
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            text-decoration: underline; /* تسطير عند التحويم */
+            color: #6c5ce7; /* لون مميز عند التحويم */
+        }
+
+        /* Responsive Adjustments for small screens */
+        @media (max-width: 500px) {
+            body {
+                padding: 0; /* إزالة الهامش من الجسم على الشاشات الصغيرة */
+                align-items: flex-start; /* محاذاة المحتوى للأعلى */
+            }
+            .bio-container {
+                width: 100%; /* العرض الكامل للشاشة */
+                min-height: 100vh; /* ارتفاع كامل لشاشة العرض */
+                border-radius: 0; /* إزالة تقويس الحواف */
+                box-shadow: none; /* إزالة الظل */
+                padding: 0; /* لا يوجد هامش داخلي في الحاوية */
+            }
+            .profile-section {
+                padding-top: 40px; /* مسافة أكبر من الأعلى على الهاتف */
+                margin-bottom: 30px;
+            }
+            .links-section {
+                padding: 0 20px; /* ضمان وجود هامش جانبي للأزرار */
+            }
+            .profile-section h1 {
+                font-size: 1.4em;
+            }
+            .profile-section p.bio-description {
+                font-size: 0.85em;
+            }
+            .link-button {
+                font-size: 0.95em;
+                padding: 14px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bio-container">
+        <div class="profile-section">
+            <div class="profile-picture-container">
+                <img src="https://via.placeholder.com/96x96/a29bfe/ffffff?text=Your+Photo" alt="صورة البروفايل" class="profile-picture">
+            </div>
+            <h1>[اسمك أو اسم علامتك التجارية]</h1>
+            <p class="bio-description">مصمم ويب مستقل ومبدع، متخصص في بناء تجارب رقمية جذابة وفعالة.</p>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="انستغرام"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.twitter.com/yourprofile" target="_blank" aria-label="تويتر"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="لينكدإن"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.github.com/yourprofile" target="_blank" aria-label="جيت هاب"><i class="fab fa-github"></i></a>
+            <a href="mailto:youremail@example.com" aria-label="بريد إلكتروني"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <div class="links-section">
+            <a href="https://yourwebsite.com" target="_blank" class="link-button">
+                الموقع الرسمي </a>
+            <a href="https://yourportfolio.com" target="_blank" class="link-button">
+                اعمالي/المعرض </a>
+            <a href="https://yourblog.com" target="_blank" class="link-button">
+                مدونتي </a>
+            <a href="https://yourstore.com" target="_blank" class="link-button">
+                متجري الالكتروني </a>
+            <a href="https://wa.me/YOURPHONENUMBER" target="_blank" class="link-button">
+                تواصل واتساب </a>
+            <a href="#contact" class="link-button">
+                احجز استشارة </a>
+        </div>
+
+        <div class="footer">
+            مصمم بواسطة <a href="https://yourwebsite.com">اسمك</a> &copy; 2025
+        </div>
+    </div>
+</body>
+</html>
